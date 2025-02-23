@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+/* common */
+
+body {
+  margin: 0;
+  background: #A8CD89;
+  line-height: 1.5;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
+}
+
+.container-2 {
+  max-width: 800px;
+  margin: 32px auto 0;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
+  background: #FFFDEC;
+  padding: 32px 64px 64px;
+  border-radius: 32px;
+}
+
+h2 {
+  margin: 0;
+  font-weight: normal;
+  text-align: center;
+  font-size: 30px;
+}
+
+p {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.container-2 h3 {
+  margin-top: 64px;
+}
+
+.line::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #F9C0AB;
+  margin: 0 auto 16px;
+  border-radius: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: #F9C0AB;
+  border-bottom: #FFFDEC solid 2px;
+}
+
+.btn {
+  text-decoration: none;
+  margin: 64px 0 32px;
+  padding: 8px 16px;
+  color: #333;
+  background: #f8df50;
+  border-radius: 8px;
+  display: inline-block;
+  /* border-bottom: 2px solid #e77c7c; */
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+/* header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 0;
+}
+
+.logo-pc {
+  display: none;
+}
+
+/* hero */
+
+.hero {
+  background: #FFFDEC url(bg2.png) repeat-x center bottom;
+  text-align: center;
+  padding: 16px 0 64px;
+}
+
+/* features */
+
+.features {
+  padding-top: 100px;
+}
+
+.feature {
+  margin-top: 64px;
+  background: #FFFDEC;
+  padding: 32px 64px 64px;
+  border-radius: 32px;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  margin-top: 16px;
+  font-size: 24px;
+  position: relative;
+  padding: 1.5rem 1rem;
+}
+
+h3:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  content: '';
+  background-image: -webkit-repeating-linear-gradient(135deg, #333, #333 1px, transparent 2px, transparent 5px);
+  background-image: repeating-linear-gradient(-45deg, #333, #333 1px, transparent 2px, transparent 5px);
+  background-size: 7px 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+h4 {
+  padding: 1rem 2rem;
+  border-left: 4px solid #333;
+}
+
+.feature p {
+  margin-top: 16px;
+}
+
+/* contact */
+
+.contact {
+  padding-top: 100px;
+}
+
+.contact-info {
+  font-family: 'Georgia', serif;
+  /* おしゃれな雰囲気を出すためセリフ体 */
+}
+
+.contact-info .name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.contact-info .reading {
+  font-size: 18px;
+  font-style: italic;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.contact-info .email {
+  font-size: 20px;
+  color: #355F2E;
+  letter-spacing: 1px;
+}
+
+
+/* work */
+
+.works {
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
+}
+
+.test {
+  margin-top: 64px;
+  background: #FFFDEC;
+  padding: 16px;
+  border-radius: 32px;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.test p {
+  margin-top: 16px;
+}
+
+.works img {
+  cursor: pointer;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  border-radius: 8px;
+
+}
+
+.works img:hover {
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+}
+
+
+/* footer */
+
+footer {
+  background: #355F2E;
+  color: #FFFDEC;
+  padding: 64px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+small {
+  font-size: 12px;
+}
+
+/* animation */
+
+.to-top {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
+
+[data-aos="my-animation"] {
+  opacity: 0;
+  transition: opacity 10000ms, transform 10000ms;
+}
+
+/* large screen */
+
+@media(min-width: 600px) {
+
+  /* header */
+
+  .logo-sp {
+    display: none;
+  }
+
+  .logo-pc {
+    display: inline;
+  }
+
+  /* hero */
+
+  .hero .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-1,
+  .hero-2 {
+    flex: 1;
+  }
+
+  .hero .desc {
+    margin-top: 32px;
+  }
+
+  /* features */
+
+  .feature {
+    display: flex;
+    gap: 32px;
+  }
+
+  .desc {
+    flex: 1;
+  }
+
+  .reversed {
+    flex-direction: row-reverse;
+  }
+
+  .work {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .work .test {
+    flex: auto;
+  }
+}
+
+/* 詳細ページ */
+
+/* --- Izakaya Games 詳細ページのスタイル追加 --- */
+
+.project-detail {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.project-detail h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.project-overview {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-overview img {
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.project-overview p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.tech-list,
+.highlight-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.tech-list li,
+.highlight-list li {
+  display: inline-block;
+  background: #F9C0AB;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.project-links {
+  margin-top: 30px;
+}
+
+.project-links .btn {
+  display: inline-block;
+  background: #355F2E;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+.project-links .btn:hover {
+  background: #2A4A1E;
+}
+
+.back-link {
+  display: block;
+  margin-top: 40px;
+  font-size: 18px;
+  color: #355F2E;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.samples {
+  display: flex;
+  gap: 32px;
+}
+
+.explain {
+  text-align: left;
+}
+
+.container-2 .desc {
+  margin-top: 16px;
+}

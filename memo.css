@@ -1,0 +1,394 @@
+@charset "utf-8";
+
+html {
+  scroll-behavior: smooth;
+  color: #333;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 100px; /* ページ下部の余白 */
+}
+
+img {
+  vertical-align: bottom;
+}
+
+/* コンテンツの横幅を制限するクラス */
+.container {
+  max-width: 800px;
+  margin: 64px auto 0;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
+}
+
+/* features セクションの container は全幅に上書き */
+.features.container {
+  max-width: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+/* フェードインの初期状態とアニメーション */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ヘッダーを横並びにする */
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+  border-bottom: 2px solid #8eba43;
+  background: pink;
+}
+
+/* ロゴのホバーでバウンス */
+.logo img:hover {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* 既存のボタンスタイル（今回は使用しない） */
+.btn {
+  padding: 8px 16px;
+  color: #fff;
+  background: #eb8a44;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+h2 {
+  margin: 80px 0 0 0;
+  text-align: center;
+  color: #4f6457;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+}
+
+h3 {
+  margin: 0;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+p {
+  margin: 0;
+}
+
+/* セクションの余白を拡大 */
+section {
+  margin-top: 80px;
+  padding: 40px 0;
+}
+
+/* ロゴの表示制御 */
+.logo-pc {
+  display: none;
+  margin-right: 16px;
+}
+
+@media(min-width: 600px) {
+  .logo-sp {
+    display: none;
+  }
+  .logo-pc {
+    display: inline;
+  }
+}
+
+/* hero セクション */
+.hero {
+  background: #8eba43 url(bg.png) repeat-x center bottom;
+  text-align: center;
+  padding-top: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ヒーローに遊び心のあるオーバーレイ */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  pointer-events: none;
+  animation: pulseOverlay 5s infinite alternate;
+}
+
+@keyframes pulseOverlay {
+  from { opacity: 0.2; }
+  to   { opacity: 0.4; }
+}
+
+.hero .btn {
+  margin-top: 64px;
+}
+
+.hero img {
+  margin-top: 64px;
+}
+
+/* features セクション */
+.features {
+  padding: 64px 0;
+  background: #8eba43;
+}
+
+/* 各 feature（カード）の横幅を600pxに制限し中央寄せ */
+.feature {
+  margin: 64px auto 0;
+  background: #fff;
+  border-radius: 32px;
+  max-width: 600px;
+  padding: 20px; /* 内側の余白はお好みで調整 */
+}
+
+.feature h3 {
+  margin-top: 16px;
+}
+
+.feature p {
+  margin-top: 16px;
+}
+
+.image {
+  text-align: center;
+}
+
+/* large screen 向け調整（feature 内を flex レイアウトにする） */
+@media(min-width: 600px) {
+  .hero .container {
+    align-items: center;
+  }
+  .hero-1 {
+    padding-bottom: 40px;
+  }
+  .hero-2 {
+    flex: 1;
+  }
+  .feature {
+    display: flex;
+    gap: 96px;
+  }
+  .image {
+    width: 300px;
+  }
+  .desc {
+    flex: 1;
+  }
+  .reversed {
+    flex-direction: row-reverse;
+  }
+}
+
+/* ナビゲーションバー */
+.nav {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 40px;
+}
+
+.nav li {
+  margin: 0 16px;
+  font-size: 20px;
+}
+
+/* ナビゲーションリンクのホバーに遊び心の回転 */
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #4f6457;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #eb8a44;
+  transform: rotate(-3deg);
+}
+
+/* Portfolio セクション */
+.portfolio {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* ポートフォリオ内の feature も最大幅600px、中央寄せで横並びに */
+.portfolio .feature {
+  flex: 1 1 600px;
+  margin: 64px auto 0;
+}
+
+/* ポートフォリオ画像のホバーで拡大＆回転 */
+.portfolio .feature .image a {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio .feature .image a:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio .feature .image {
+  width: 100%;
+}
+
+.portfolio .feature .image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Contact セクション */
+.contact-section {
+  background: transparent; /* 親の背景 (#8eba43) を引き継ぐ */
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff; /* 白い背景 */
+  border-radius: 32px; /* 角丸 */
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.contact-container p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0 auto 32px;
+  text-align: center;
+  max-width: 500px;
+}
+
+/* フォーム */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #eb8a44;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-submit {
+  background: #eb8a44;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn-submit:hover {
+  background: #d97b37;
+}
+
+.btn-submit:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    width: 90%;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* footer にパルスアニメーションで遊び心を追加 */
+footer {
+  background: #333;
+  color: white;
+  padding: 64px;
+  text-align: center;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+small {
+  font-size: 16px;
+}
