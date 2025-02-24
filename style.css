@@ -102,7 +102,7 @@ h1 {
 /* hero */
 
 .hero {
-  background: #FFFDEC url(bg2.png) repeat-x center bottom;
+  background: #FFFDEC url(./img/bg.png) repeat-x center bottom;
   text-align: center;
   padding: 16px 0 64px;
 }
@@ -180,6 +180,7 @@ h4 {
   font-size: 20px;
   color: #355F2E;
   letter-spacing: 1px;
+  border-bottom: #355F2E solid 1px; 
 }
 
 
@@ -359,29 +360,38 @@ small {
 
 .project-links .btn {
   display: inline-block;
-  background: #355F2E;
-  color: white;
+  margin-top: 40px;
+  margin-right: 40px;
   padding: 12px 24px;
-  border-radius: 25px;
+  background: linear-gradient(45deg, #355F2E, #2A4A1E);
+  color: #fff;
+  border-radius: 30px;
+  font-size: 18px;
   text-decoration: none;
-  margin: 10px;
-  transition: 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-links .btn:hover {
-  background: #2A4A1E;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .back-link {
-  display: block;
+  display: inline-block;
   margin-top: 40px;
-  font-size: 18px;
-  color: #355F2E;
+  padding: 10px 20px;
+  background-color: #f0f0f0; /* ベースの背景色 */
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
   text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .back-link:hover {
-  text-decoration: underline;
+  background-color: #e0e0e0;
+  border-color: #bbb;
 }
 
 .samples {
