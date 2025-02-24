@@ -23,9 +23,9 @@
       <h2>Izakaya Games</h2>
       <div class="project-overview">
         <div class="samples">
-          <img src="sample2_1.jpg" alt="Izakaya Games" width="200">
-          <img src="sample2_2.jpg" alt="Izakaya Games" width="200">
-          <img src="sample2_3.jpg" alt="Izakaya Games" width="200">
+          <img src="./img/sample2_1.jpg" alt="Izakaya Games" width="200">
+          <img src="./img/sample2_2.jpg" alt="Izakaya Games" width="200">
+          <img src="./img/sample2_3.jpg" alt="Izakaya Games" width="200">
         </div>
         <p class="desc">
           飲み会で遊びながら<br>支払いの計算ができるゲームアプリ。<br>
@@ -39,7 +39,7 @@
       <h3>開発の経緯</h3>
       <p class="desc">
         居酒屋経営をする知人から<br>
-         <strong>「テーブルで遊べるWebアプリを作りたい」 </strong><br>との相談を受け、お会計を絡めたゲームを提案。<br>
+        <strong>「テーブルで遊べるWebアプリを作りたい」 </strong><br>との相談を受け、お会計を絡めたゲームを提案。<br>
         JavaScript初学者と「素のJavaScript」で<br>ペアプログラミングを行い、<br>直感的なUIと割り勘ロジックを融合した<br>アプリを開発しました。
       </p>
 
@@ -49,7 +49,7 @@
         <li>JavaScript</li>
       </ul>
 
-        <h3>開発環境</h3>
+      <h3>開発環境</h3>
       <div class="explain">
         <h4>エディタ</h4>
         <p>Visual Studio Code</p>
@@ -72,17 +72,21 @@
 
       <h3>苦労した点</h3>
       <p class="desc">
-        Firebase Firestore のリアルタイム同期に初挑戦し、<br>
-        <code>useEffect</code> の依存配列を適切に設定しないと無限ループが発生する問題に直面。<br>
-        Firestore のリアルタイムリスナーを適切に導入し解決した。
+        JavaScript の実装方法には多様性があるため、<br>2人で分担してコードを作成した結果、<br>
+        プロジェクト全体として統一感に欠ける状態になりました。<br>
+        そのため、コードスタイルを揃えるために労力を要しました。
       </p>
 
       <h3>改善点</h3>
-      <p class="desc">
-        Firebase Firestore のリアルタイム同期に初挑戦し、<br>
-        <code>useEffect</code> の依存配列を適切に設定しないと無限ループが発生する問題に直面。<br>
-        Firestore のリアルタイムリスナーを適切に導入し解決した。
-      </p>
+      <div class="explain">
+        <h4>ゲーム</h4>
+        <p>ゲームは現在１種類のみだが、数種類から選べるようにする。</p>
+        <h4>ペアプログラミング</h4>
+        <p>ページごとに分担して行なったが、<br>本来のペアプログラミングの役割である<br>「ドライバー」と「ナビゲーター」に分かれてプロジェクトに取り組み、<br>プロジェクト全体の把握をしやすくする。</p>
+        <h4>シェイクカウンター</h4>
+        <p>スマホを実際に振った回数と検出カウントにズレが生じている。<br>
+        パラメータの調整は試みたが、<br>複数軸の加速度データを組み合わせた解析を行い、<br>誤検出を減らす検出ロジックの検討をする。</p>
+      </div>
 
       <div class="project-links">
         <a href="https://tachikiiii.github.io/IzakayaGames/" class="btn" target="_blank">デモを見る</a>
@@ -90,7 +94,7 @@
       </div>
     </div>
 
-    <a href="index.html" class="back-link">← ポートフォリオへ戻る</a>
+    <a href="index.html" class="back-link">← TOPへ戻る</a>
   </section>
 
   <footer>
